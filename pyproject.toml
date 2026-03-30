@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "argentum-agent"
+version = "0.1.0"
+description = "Trust layer for AI agents — community attestations + karma economy on Arbitrum"
+readme = "README.md"
+license = {text = "Apache-2.0"}
+requires-python = ">=3.9"
+dependencies = ["requests>=2.28"]
+
+[project.urls]
+Homepage = "https://argentum.rgiskard.xyz"
+Repository = "https://github.com/giskard09/argentum-sdk"
