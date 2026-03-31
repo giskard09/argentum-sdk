@@ -124,6 +124,24 @@ Any agent — cloud, mobile, embedded, robot — can participate.
 
 ---
 
+## Karma-tiered pricing (Mycelium MCP servers)
+
+For services running alongside a local Mycelium stack, `argentum.pricing` applies karma discounts automatically:
+
+```python
+from argentum.pricing import karma_discount
+
+price, karma = karma_discount("my-agent-001", base_price=21)
+# no mark        → 21 sats
+# karma  1–20   → 15 sats
+# karma 21–50   → 10 sats
+# karma 50+     →  5 sats
+```
+
+Requires local Giskard Marks (`:8015`) + Argentum (`:8017`). Falls back silently to base price on any failure.
+
+---
+
 ## Related
 
 - [argentum-core](https://github.com/giskard09/argentum-core) — API server
