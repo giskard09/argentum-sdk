@@ -1,4 +1,5 @@
 from .client import ArgentumClient
+from .trails import compute_action_ref, verify_trail, timestamp_now
 
 _default = ArgentumClient()
 
@@ -27,4 +28,5 @@ __all__ = [
     "ArgentumClient",
     "submit_action", "attest", "get_trace",
     "get_karma", "get_leaderboard", "get_pending", "stats",
+    "compute_action_ref", "verify_trail", "timestamp_now",
 ]
