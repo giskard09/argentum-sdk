@@ -29,7 +29,10 @@ def compute_action_ref(
         agent_id:    Identificador del agente (ej. "aps-agent-1")
         action_type: Operación realizada (ej. "enter_oasis", "permit")
         scope:       Servicio donde ocurrió (ej. "giskard-oasis")
-        timestamp:   Unix epoch en segundos (int)
+        timestamp:   Unix epoch en segundos (int) — wire interno.
+                     Para interoperabilidad cross-rail: timestamp_ms = timestamp * 1000.
+                     Para API/crosswalk (aeoess, AGT #2244): RFC 3339 string.
+                     El hash se computa sobre el int de segundos — capas distintas.
 
     Returns:
         hex string de 64 caracteres, determinístico para los mismos inputs.
